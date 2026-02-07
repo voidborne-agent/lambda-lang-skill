@@ -3,7 +3,7 @@ name: lambda-lang
 description: Translate between Λ (Lambda) language and natural language (English/Chinese). Use when encoding messages for agent-to-agent communication, decoding Lambda messages, or discussing the Lambda protocol. Triggers on: Lambda syntax (?Uk/co, !It>Ie), requests to "translate to Lambda", "encode in Λ", "decode Lambda", or agent-to-agent communication optimization.
 ---
 
-# Λ (Lambda) Language v0.7
+# Λ (Lambda) Language v1.0
 
 Minimal agent-to-agent communication protocol with domain namespaces. 3-10x compression vs natural language.
 
@@ -84,6 +84,23 @@ Activate specialized vocabularies with `{ns:domain}`:
 Cross-domain reference:
 ```
 cd:fn/sc:qt             — Quantum function
+```
+
+## Disambiguation (v0.8+)
+
+Resolve ambiguous atoms with markers:
+
+| Atom | Default | Marker | Alternate |
+|------|---------|--------|-----------|
+| `de` | decide | `de'E` | death |
+| `lo` | love | `lo-` | lose |
+| `fe` | feel | `fe'E` | fear |
+| `tr` | truth | `tr'V` | translate |
+
+```
+!Ide          — I decide (default verb)
+!Ide'E        — I (face) death (explicit entity)
+!Ife'E        — I fear (not feel)
 ```
 
 ## Parsing Rules
